@@ -11,9 +11,9 @@ let schema = new Schema({
     currency : {type:String,required:true},
     averageRating :{type:Number,required:true},
     numberOfReviews :{type:Number,required:true},
-    mainAttractions :{type:String,required:true},
+    mainAttractions :{type:Array,required:true},
     bestSeasonToVisit :{type:String,required:true},
-    localCuisine :{type:String,required:true},
+    localCuisine :{type:Array,required:true},
     
 },{
     timestamps:true
