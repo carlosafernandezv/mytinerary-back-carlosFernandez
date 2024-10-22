@@ -6,6 +6,7 @@ import morgan from "morgan"
 import indexRouter from "./router/index.js"
 import not_found_handler from "./middlewares/not_found_handler.js";
 import error_handler from "./middlewares/error_handler.js"
+import error_400 from "./middlewares/error_400.js";
 
 
 
@@ -23,6 +24,8 @@ server.use(morgan('dev'))
 //router
 server.use('/api', indexRouter)
 server.use(not_found_handler)
+server.use(error_400)
+
 server.use(error_handler)
 
 
