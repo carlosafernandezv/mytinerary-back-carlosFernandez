@@ -5,6 +5,9 @@ let allCity = async (req,res,next) => {
         
         let {cityName,photo} = req.query
         let query = {}
+        if (cityName) {
+            query.cityName = {$regex: '^'+cityName, $options:'i'}
+        }
 
         let all = await  City.find(query)
         return res.status(200).json({
