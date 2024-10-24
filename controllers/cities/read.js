@@ -3,12 +3,17 @@ import City from "../../models/City.js";
 let allCity = async (req,res,next) => {
     try {
         
-        let {cityName} = req.query
+        let {cityName, id} = req.query
+        
         let query = {}
-        if (cityName) {
+        if (id){
+            query._id = id
+        }else if (cityName) {
             query.cityName = {$regex: '^'+cityName, $options:'i'}
             
         }
+        
+
 
         let all = await  City.find(query)
 
