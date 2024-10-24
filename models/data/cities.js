@@ -8,7 +8,7 @@ let cities = [
     {
       "id": 1,
       "cityName": "Paris",
-      "photo": "https://unsplash.com/photos/QAwciFlS1g4",
+      "photo": "https://images.unsplash.com/photo-1431274172761-fca41d930114",
       "country": "France",
       "continent": "Europe",
       "description": "Paris, the capital of France, is famed for its art, fashion, gastronomy, and culture.",
@@ -22,7 +22,7 @@ let cities = [
     {
       "id": 2,
       "cityName": "New York",
-      "photo": "https://unsplash.com/photos/1SAnrIxw5OY",
+      "photo": "https://images.pexels.com/photos/2190283/pexels-photo-2190283.jpeg",
       "country": "USA",
       "continent": "North America",
       "description": "New York City is known for its iconic landmarks, diverse culture, and fast-paced lifestyle.",
@@ -36,7 +36,7 @@ let cities = [
     {
       "id": 3,
       "cityName": "Tokyo",
-      "photo": "https://pixabay.com/photos/tokyo-tower-tokyo-landmark-2228148/",
+      "photo": "https://img.freepik.com/foto-gratis/vista-aerea-paisaje-urbano-tokio-montana-fuji-japon_335224-148.jpg",
       "country": "Japan",
       "continent": "Asia",
       "description": "Tokyo, Japan's capital, offers a mix of tradition and futuristic technology.",
@@ -50,7 +50,7 @@ let cities = [
     {
       "id": 4,
       "cityName": "Rio de Janeiro",
-      "photo": "https://unsplash.com/photos/JWM3S6v7xUc",
+      "photo": "https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f",
       "country": "Brazil",
       "continent": "South America",
       "description": "Rio is known for its vibrant culture, beaches, and the iconic Christ the Redeemer statue.",
@@ -64,7 +64,7 @@ let cities = [
     {
       "id": 5,
       "cityName": "Sydney",
-      "photo": "https://unsplash.com/photos/_kmuBPpyxU4",
+      "photo": "https://images.unsplash.com/photo-1528072164453-f4e8ef0d475a",
       "country": "Australia",
       "continent": "Oceania",
       "description": "Sydney is Australia's largest city, famous for its harbor, Opera House, and Bondi Beach.",
@@ -78,7 +78,7 @@ let cities = [
     {
       "id": 6,
       "cityName": "Cape Town",
-      "photo": "https://unsplash.com/photos/L2ZCJ_XFqws",
+      "photo": "https://www.micato.com/wp-content/uploads/2018/09/cape-town-1-2-1110x700.jpg",
       "country": "South Africa",
       "continent": "Africa",
       "description": "Cape Town is known for its stunning landscapes, Table Mountain, and vibrant culture.",
@@ -92,7 +92,7 @@ let cities = [
     {
       "id": 7,
       "cityName": "Rome",
-      "photo": "https://unsplash.com/photos/HlNcigvUi4Q",
+      "photo": "https://images.unsplash.com/photo-1552832230-c0197dd311b5",
       "country": "Italy",
       "continent": "Europe",
       "description": "Rome, the capital of Italy, is known for its nearly 3,000 years of globally influential art, architecture, and culture.",
@@ -106,7 +106,7 @@ let cities = [
     {
       "id": 8,
       "cityName": "Dubai",
-      "photo": "https://unsplash.com/photos/nDqA4d5NL0k",
+      "photo": "https://images.unsplash.com/photo-1546412414-28524ac58329",
       "country": "UAE",
       "continent": "Asia",
       "description": "Dubai is a global city known for luxury shopping, ultramodern architecture, and a lively nightlife scene.",
@@ -120,7 +120,7 @@ let cities = [
     {
       "id": 9,
       "cityName": "Bangkok",
-      "photo": "https://unsplash.com/photos/YQxwWrwHKBM",
+      "photo": "https://images.pexels.com/photos/7060081/pexels-photo-7060081.jpeg",
       "country": "Thailand",
       "continent": "Asia",
       "description": "Bangkok is Thailand's capital, known for its ornate shrines and vibrant street life.",
@@ -134,7 +134,7 @@ let cities = [
     {
       "id": 10,
       "cityName": "Istanbul",
-      "photo": "https://unsplash.com/photos/DZpc4UY8ZtY",
+      "photo": "https://images.pexels.com/photos/13205150/pexels-photo-13205150.jpeg",
       "country": "Turkey",
       "continent": "Europe/Asia",
       "description": "Istanbul, a major city in Turkey, straddles Europe and Asia across the Bosphorus Strait.",
@@ -148,7 +148,7 @@ let cities = [
     {
       "id": 11,
       "cityName": "London",
-      "photo": "https://unsplash.com/photos/QVpqFELB6dE",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/London_Skyline_%28125508655%29.jpeg/1024px-London_Skyline_%28125508655%29.jpeg",
       "country": "United Kingdom",
       "continent": "Europe",
       "description": "London, the capital of England, is a 21st-century city with a history stretching back to Roman times.",
@@ -162,7 +162,7 @@ let cities = [
     {
       "id": 12,
       "cityName": "Moscow",
-      "photo": "https://unsplash.com/photos/JyVcAIUAcPM",
+      "photo": "https://content.r9cdn.net/rimg/dimg/b0/1c/7746c81c-city-14713-163f5192361.jpg",
       "country": "Russia",
       "continent": "Europe",
       "description": "Moscow is the capital of Russia, famous for its historical architecture and cultural landmarks.",
@@ -176,7 +176,7 @@ let cities = [
     {
       "id": 13,
       "cityName": "Toronto",
-      "photo": "https://unsplash.com/photos/ZtxEDIh4YnI",
+      "photo": "https://a.travel-assets.com/findyours-php/viewfinder/images/res70/517000/517220-canada.jpg",
       "country": "Canada",
       "continent": "North America",
       "description": "Toronto is a major Canadian city along Lake Ontario, known for its dynamic mix of culture and commerce.",
@@ -190,7 +190,7 @@ let cities = [
     {
       "id": 14,
       "cityName": "Mexico City",
-      "photo": "https://unsplash.com/photos/X9VffiluPyo",
+      "photo": "https://dyn.eu.mktgcdn.com/f/100004519/pO-r3qoPr4M6KyIxlwEU9FPSlfp-Xay_MeGP0DIdWfY.jpg",
       "country": "Mexico",
       "continent": "North America",
       "description": "Mexico City, the capital of Mexico, is known for its Templo Mayor, the baroque Catedral Metropolitana, and the Palacio Nacional.",
@@ -204,7 +204,7 @@ let cities = [
     {
       "id": 15,
       "cityName": "Seoul",
-      "photo": "https://unsplash.com/photos/MYp3HtIpfRM",
+      "photo": "https://www.agoda.com/wp-content/uploads/2024/04/Featured-image-Han-River-at-night-in-Seoul-South-Korea-1244x700.jpg",
       "country": "South Korea",
       "continent": "Asia",
       "description": "Seoul, the capital of South Korea, is known for its modern skyscrapers, high-tech subways, and pop culture.",
