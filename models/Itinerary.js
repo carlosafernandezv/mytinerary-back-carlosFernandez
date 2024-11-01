@@ -11,7 +11,13 @@ let schema = new Schema({
     price: { type: Number, required: true },
     durationHours: { type: Number, required: true },
     likes: { type: Number, default: 0 },
-    hashtags: { type: Array, required: true }
+    hashtags: { type: Array, required: true },
+    comments : {
+        name: { type: String, required: true }, 
+        profilePhotoUrl: { type: String, required: true },
+        comment:{type:String, require:true},
+        date: {type:Date, require:true}
+    },
 
 }, {
     timestamps: true

@@ -1,12 +1,12 @@
-import City from "../../models/City.js";
+import Itinerary from "../../models/Itinerary.js";
 
 let deleteOne = async (req, res, next) => {
     try {
-        let deleteCity = await City.deleteOne(
-            {cityName: req.body.cityName}
+        let deleteItinerary = await Itinerary.deleteOne(
+            {title: req.body.title}
         )
         return res.status(200).json({
-            response:deleteCity
+            response:deleteItinerary
         })
     } catch (error) {
         next(error)

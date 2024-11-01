@@ -1,11 +1,11 @@
-import City from "../../models/City.js";
+import Itinerary from "../../models/Itinerary.js";
 
 const update = async (req, res, next) => {
     try {
-        let city = req.body
-        let upd = await City.updateOne(
-            {_id : city._id},
-            {description: city.description}
+        let itinerary = req.body
+        let upd = await Itinerary.updateOne(
+            {_id : itinerary._id},
+            {description: itinerary.description}
         )
         if (upd) {
             return res.status(200).json({
