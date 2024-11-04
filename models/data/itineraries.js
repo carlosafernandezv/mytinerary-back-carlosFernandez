@@ -3,274 +3,472 @@ import "../../config/database.js"
 import Itinerary from "../Itinerary.js"
 
 
+/* let itineraries = [
+            {
+                title: "Romantic Evening by the Seine",
+                description: "Enjoy a romantic evening with a boat ride along the Seine, followed by dinner at a cozy Parisian restaurant.",
+                createdBy: {
+                    name: "Alice Dupont",
+                    profilePhotoUrl: "https://example.com/alice.jpg"
+                },
+                price: 150,
+                durationHours: 4,
+                likes: 45,
+                hashtags: ["#romance", "#seine", "#paris"],
+                comments: [
+                    {
+                        name: "John Doe",
+                        profilePhotoUrl: "https://example.com/john.jpg",
+                        comment: "An unforgettable experience, highly recommended!",
+                        date: new Date("2023-06-12")
+                    },
+                    {
+                        name: "Emily Smith",
+                        profilePhotoUrl: "https://example.com/emily.jpg",
+                        comment: "Beautiful views and great ambiance!",
+                        date: new Date("2023-07-05")
+                    }
+                ]
+            },
+            {
+                title: "Parisian Art Tour",
+                description: "Explore the Louvre and other notable galleries with an expert guide in art history.",
+                createdBy: {
+                    name: "Paul Lambert",
+                    profilePhotoUrl: "https://example.com/paul.jpg"
+                },
+                price: 100,
+                durationHours: 5,
+                likes: 60,
+                hashtags: ["#art", "#louvre", "#museum"],
+                comments: [
+                    {
+                        name: "Sophia Johnson",
+                        profilePhotoUrl: "https://example.com/sophia.jpg",
+                        comment: "A great experience for art lovers!",
+                        date: new Date("2023-08-20")
+                    }
+                ]
+            }
+
+,
+            {
+                title: "Central Park Bike Tour",
+                description: "Ride through the scenic paths of Central Park on a guided bike tour.",
+                createdBy: {
+                    name: "Mike Ross",
+                    profilePhotoUrl: "https://example.com/mike.jpg"
+                },
+                price: 50,
+                durationHours: 3,
+                likes: 30,
+                hashtags: ["#centralpark", "#biketour", "#nyc"],
+                comments: [
+                    {
+                        name: "Linda Lee",
+                        profilePhotoUrl: "https://example.com/linda.jpg",
+                        comment: "So much fun! Perfect way to see the park.",
+                        date: new Date("2023-05-10")
+                    }
+                ]
+            },
+            {
+                title: "NYC Nightlife Experience",
+                description: "Discover New York's best bars and nightclubs with a local guide.",
+                createdBy: {
+                    name: "Sarah Black",
+                    profilePhotoUrl: "https://example.com/sarah.jpg"
+                },
+                price: 120,
+                durationHours: 5,
+                likes: 80,
+                hashtags: ["#nightlife", "#nyc", "#bars"],
+                comments: [
+                    {
+                        name: "Jake Kim",
+                        profilePhotoUrl: "https://example.com/jake.jpg",
+                        comment: "Best night out in NYC!",
+                        date: new Date("2023-04-15")
+                    },
+                    {
+                        name: "Angela Brown",
+                        profilePhotoUrl: "https://example.com/angela.jpg",
+                        comment: "Fantastic experience, must-do!",
+                        date: new Date("2023-03-23")
+                    }
+                ]
+            }
+   ,
+            {
+                title: "Traditional Tea Ceremony",
+                description: "Experience a traditional Japanese tea ceremony in a historic tea house.",
+                createdBy: {
+                    name: "Yuki Nakamura",
+                    profilePhotoUrl: "https://example.com/yuki.jpg"
+                },
+                price: 70,
+                durationHours: 2,
+                likes: 95,
+                hashtags: ["#tea", "#tokyo", "#tradition"],
+                comments: [
+                    {
+                        name: "Chris Park",
+                        profilePhotoUrl: "https://example.com/chris.jpg",
+                        comment: "Peaceful and enlightening experience.",
+                        date: new Date("2023-02-18")
+                    }
+                ]
+            }
+,
+            {
+                title: "Sydney Opera House Tour",
+                description: "Take a guided tour of the iconic Sydney Opera House.",
+                createdBy: {
+                    name: "Olivia White",
+                    profilePhotoUrl: "https://example.com/olivia.jpg"
+                },
+                price: 40,
+                durationHours: 2,
+                likes: 75,
+                hashtags: ["#opera", "#sydney", "#australia"],
+                comments: [
+                    {
+                        name: "Henry King",
+                        profilePhotoUrl: "https://example.com/henry.jpg",
+                        comment: "Impressive architecture and history.",
+                        date: new Date("2023-09-25")
+                    }
+                ]
+            },
+            {
+                title: "Bondi Beach Surf Lesson",
+                description: "Learn to surf at Sydney's famous Bondi Beach with experienced instructors.",
+                createdBy: {
+                    name: "Emma Taylor",
+                    profilePhotoUrl: "https://example.com/emma.jpg"
+                },
+                price: 60,
+                durationHours: 3,
+                likes: 100,
+                hashtags: ["#surfing", "#bondi", "#australia"],
+                comments: [
+                    {
+                        name: "Lucas Reed",
+                        profilePhotoUrl: "https://example.com/lucas.jpg",
+                        comment: "Great lesson, the instructors were fantastic!",
+                        date: new Date("2023-10-04")
+                    }
+                ]
+            }
+,
+            {
+                title: "Ancient Rome Tour",
+                description: "Discover the Colosseum and Roman Forum with an expert guide.",
+                createdBy: {
+                    name: "Marco Rossi",
+                    profilePhotoUrl: "https://example.com/marco.jpg"
+                },
+                price: 80,
+                durationHours: 4,
+                likes: 120,
+                hashtags: ["#rome", "#history", "#colosseum"],
+                comments: [
+                    {
+                        name: "Isabella Martinez",
+                        profilePhotoUrl: "https://example.com/isabella.jpg",
+                        comment: "So much history, loved every moment!",
+                        date: new Date("2023-06-11")
+                    }
+                ]
+            }
+,
+            {
+                title: "Street Food Tour",
+                description: "Taste Bangkok's best street foods with a knowledgeable guide.",
+                createdBy: {
+                    name: "Nina Chang",
+                    profilePhotoUrl: "https://example.com/nina.jpg"
+                },
+                price: 40,
+                durationHours: 3,
+                likes: 85,
+                hashtags: ["#food", "#bangkok", "#streetfood"],
+                comments: [
+                    {
+                        name: "Tom Hill",
+                        profilePhotoUrl: "https://example.com/tom.jpg",
+                        comment: "A delicious adventure!",
+                        date: new Date("2023-05-09")
+                    }
+                ]
+            }
+,
+            {
+                title: "Bosphorus Cruise",
+                description: "Enjoy a scenic cruise along the Bosphorus Strait.",
+                createdBy: {
+                    name: "Leyla Koc",
+                    profilePhotoUrl: "https://example.com/leyla.jpg"
+                },
+                price: 55,
+                durationHours: 2,
+                likes: 70,
+                hashtags: ["#istanbul", "#bosphorus", "#cruise"],
+                comments: [
+                    {
+                        name: "Julia Peterson",
+                        profilePhotoUrl: "https://example.com/julia.jpg",
+                        comment: "Amazing views and a relaxing time.",
+                        date: new Date("2023-04-13")
+                    }
+                ]
+            }
+];  */
+
 let itineraries = [
-    {
-        title: "Día Cultural",
-        description: "Explora los monumentos más icónicos de París.",
-        createdBy: {
-            name: "Alice",
-            profilePhotoUrl: "https://example.com/alice.jpg"
-        },
-        price: 3,
-        durationHours: 8,
-        likes: 0,
-        hashtags: ["#Cultura", "#Historia", "#Arte"]
-    },
-    {
-        title: "Gastronomía Francesa",
-        description: "Disfruta de la exquisita comida francesa.",
-        createdBy: {
-            name: "Bob",
-            profilePhotoUrl: "https://example.com/bob.jpg"
-        },
-        price: 4,
-        durationHours: 6,
-        likes: 0,
-        hashtags: ["#Gastronomía", "#Francia", "#Comida"]
-    },
-    {
-        title: "Manhattan en un Día",
-        description: "Visita los puntos más emblemáticos de Manhattan.",
-        createdBy: {
-            name: "Charlie",
-            profilePhotoUrl: "https://example.com/charlie.jpg"
-        },
-        price: 4,
-        durationHours: 10,
-        likes: 0,
-        hashtags: ["#NYC", "#Manhattan", "#Turismo"]
-    },
-    {
-        title: "Sabores de Nueva York",
-        description: "Un recorrido por la mejor comida callejera de la ciudad.",
-        createdBy: {
-            name: "Diana",
-            profilePhotoUrl: "https://example.com/diana.jpg"
-        },
-        price: 2,
-        durationHours: 4,
-        likes: 0,
-        hashtags: ["#Comida", "#Callejera", "#NYCEats"]
-    },
-    {
-        title: "Moderno y Tradicional",
-        description: "Descubre la mezcla de modernidad y tradición en Tokio.",
-        createdBy: {
-            name: "Eve",
-            profilePhotoUrl: "https://example.com/eve.jpg"
-        },
-        price: 3,
-        durationHours: 8,
-        likes: 0,
-        hashtags: ["#Tokio", "#Tradición", "#Cultura"]
-    },
-    {
-        title: "Ruta Gastronómica",
-        description: "Saborea los platos típicos japoneses.",
-        createdBy: {
-            name: "Frank",
-            profilePhotoUrl: "https://example.com/frank.jpg"
-        },
-        price: 3,
-        durationHours: 5,
-        likes: 0,
-        hashtags: ["#Gastronomía", "#Japón", "#Sushi"]
-    },
-    {
-        title: "Tech Tour",
-        description: "Explora la tecnología avanzada de Tokio.",
-        createdBy: {
-            name: "Grace",
-            profilePhotoUrl: "https://example.com/grace.jpg"
-        },
-        price: 4,
-        durationHours: 6,
-        likes: 0,
-        hashtags: ["#Tecnología", "#Innovación", "#Tech"]
-    },
-    {
-        title: "Aventura Carioca",
-        description: "Vive la emoción y belleza de Río de Janeiro.",
-        createdBy: {
-            name: "Hank",
-            profilePhotoUrl: "https://example.com/hank.jpg"
-        },
-        price: 3,
-        durationHours: 9,
-        likes: 0,
-        hashtags: ["#Aventura", "#Brasil", "#Río"]
-    },
-    {
-        title: "Relax en la Playa",
-        description: "Disfruta de un día relajado en las famosas playas de Río.",
-        createdBy: {
-            name: "Ivy",
-            profilePhotoUrl: "https://example.com/ivy.jpg"
-        },
-        price: 2,
-        durationHours: 7,
-        likes: 0,
-        hashtags: ["#Playa", "#Río", "#Sol"]
-    },
-    {
-        title: "Sydney Cultural",
-        description: "Un recorrido por los principales puntos culturales de Sídney.",
-        createdBy: {
-            name: "Jack",
-            profilePhotoUrl: "https://example.com/jack.jpg"
-        },
-        price: 4,
-        durationHours: 8,
-        likes: 0,
-        hashtags: ["#Cultura", "#Australia", "#Sydney"]
-    },
-    {
-        title: "Playa y Surf",
-        description: "Día de playa y surf en Bondi Beach.",
-        createdBy: {
-            name: "Karen",
-            profilePhotoUrl: "https://example.com/karen.jpg"
-        },
-        price: 3,
-        durationHours: 6,
-        likes: 0,
-        hashtags: ["#Surf", "#Bondi", "#Playa"]
-    },
-    {
-        title: "Cima de la Montaña",
-        description: "Explora la Montaña de la Mesa y sus alrededores.",
-        createdBy: {
-            name: "Leo",
-            profilePhotoUrl: "https://example.com/leo.jpg"
-        },
-        price: 3,
-        durationHours: 8,
-        likes: 0,
-        hashtags: ["#Montaña", "#Naturaleza", "#Aventura"]
-    },
-    {
-        title: "Ruta del Vino",
-        description: "Tour por las mejores bodegas de Ciudad del Cabo.",
-        createdBy: {
-            name: "Mia",
-            profilePhotoUrl: "https://example.com/mia.jpg"
-        },
-        price: 4,
-        durationHours: 7,
-        likes: 0,
-        hashtags: ["#Vino", "#Sudáfrica", "#Bodegas"]
-    },
-    {
-        title: "Historia Viva",
-        description: "Descubre los tesoros históricos de Roma.",
-        createdBy: {
-            name: "Nina",
-            profilePhotoUrl: "https://example.com/nina.jpg"
-        },
-        price: 4,
-        durationHours: 9,
-        likes: 0,
-        hashtags: ["#Historia", "#Roma", "#Arte"]
-    },
-    {
-        title: "Gastronomía Italiana",
-        description: "Saborea los mejores platos italianos.",
-        createdBy: {
-            name: "Oscar",
-            profilePhotoUrl: "https://example.com/oscar.jpg"
-        },
-        price: 3,
-        durationHours: 6,
-        likes: 0,
-        hashtags: ["#Comida", "#Italia", "#Pasta"]
-    },
-    {
-        title: "Roma Nocturna",
-        description: "Disfruta de la vida nocturna de Roma.",
-        createdBy: {
-            name: "Paul",
-            profilePhotoUrl: "https://example.com/paul.jpg"
-        },
-        price: 4,
-        durationHours: 5,
-        likes: 0,
-        hashtags: ["#Nocturna", "#Diversión", "#Roma"]
-    },
-    {
-        title: "Lujo y Modernidad",
-        description: "Explora la opulencia y modernidad de Dubái.",
-        createdBy: {
-            name: "Quincy",
-            profilePhotoUrl: "https://example.com/quincy.jpg"
-        },
-        price: 5,
-        durationHours: 10,
-        likes: 0,
-        hashtags: ["#Lujo", "#Modernidad", "#Dubái"]
-    },
-    {
-        title: "Safari en el Desierto",
-        description: "Aventura de un día en el desierto de Dubái.",
-        createdBy: {
-            name: "Rachel",
-            profilePhotoUrl: "https://example.com/rachel.jpg"
-        },
-        price: 4,
-        durationHours: 8,
-        likes: 0,
-        hashtags: ["#Desierto", "#Aventura", "#Safari"]
-    },
-    {
-        title: "Templos y Mercados",
-        description: "Visita los templos más famosos y los mercados vibrantes de Bangkok.",
-        createdBy: {
-            name: "Sam",
-            profilePhotoUrl: "https://example.com/sam.jpg"
-        },
-        price: 3,
-        durationHours: 8,
-        likes: 0,
-        hashtags: ["#Templos", "#Mercados", "#Bangkok"]
-    },
-    {
-        title: "Gastronomía Tailandesa",
-        description: "Disfruta de la auténtica comida tailandesa.",
-        createdBy: {
-            name: "Tina",
-            profilePhotoUrl: "https://example.com/tina.jpg"
-        },
-        price: 3,
-        durationHours: 6,
-        likes: 0,
-        hashtags: ["#Comida", "#Tailandesa", "#BangkokEats"]
-    },
-    {
-        title: "Histórica Estambul",
-        description: "Explora las maravillas históricas de Estambul.",
-        createdBy: {
-            name: "Uma",
-            profilePhotoUrl: "https://example.com/uma.jpg"
-        },
-        price: 4,
-        durationHours: 9,
-        likes: 0,
-        hashtags: ["#Historia", "#Estambul", "#Cultura"]
-    },
-    {
-        title: "Gastronomía Turca",
-        description: "Disfruta de la deliciosa comida turca.",
-        createdBy: {
-            name: "Victor",
-            profilePhotoUrl: "https://example.com/victor.jpg"
-        },
-        price: 3,
-        durationHours: 6,
-        likes: 0,
-        hashtags: ["#Comida", "#Turquía", "#EstambulEats"]
-    }
+            {
+                city: '6718e936d7dcd344d93db999',
+                cityName: "Paris",
+                title: "Romantic Evening by the Seine",
+                description: "Enjoy a romantic evening with a boat ride along the Seine, followed by dinner at a cozy Parisian restaurant.",
+                createdBy: {
+                    name: "Alice Dupont",
+                    profilePhotoUrl: "https://example.com/alice.jpg"
+                },
+                price: 150,
+                durationHours: 4,
+                likes: 45,
+                hashtags: ["#romance", "#seine", "#paris"],
+                comments: [
+                    {
+                        name: "John Doe",
+                        profilePhotoUrl: "https://example.com/john.jpg",
+                        comment: "An unforgettable experience, highly recommended!",
+                        date: new Date("2023-06-12")
+                    },
+                    {
+                        name: "Emily Smith",
+                        profilePhotoUrl: "https://example.com/emily.jpg",
+                        comment: "Beautiful views and great ambiance!",
+                        date: new Date("2023-07-05")
+                    }
+                ]
+            },
+            {
+                city: '6718e936d7dcd344d93db999',
+                cityName: "Paris",
+                title: "Parisian Art Tour",
+                description: "Explore the Louvre and other notable galleries with an expert guide in art history.",
+                createdBy: {
+                    name: "Paul Lambert",
+                    profilePhotoUrl: "https://example.com/paul.jpg"
+                },
+                price: 100,
+                durationHours: 5,
+                likes: 60,
+                hashtags: ["#art", "#louvre", "#museum"],
+                comments: [
+                    {
+                        name: "Sophia Johnson",
+                        profilePhotoUrl: "https://example.com/sophia.jpg",
+                        comment: "A great experience for art lovers!",
+                        date: new Date("2023-08-20")
+                    }
+                ]
+            }
+,
+            {
+                city: '6718e936d7dcd344d93db99a',
+                cityName: "New York",
+                title: "Central Park Bike Tour",
+                description: "Ride through the scenic paths of Central Park on a guided bike tour.",
+                createdBy: {
+                    name: "Mike Ross",
+                    profilePhotoUrl: "https://example.com/mike.jpg"
+                },
+                price: 50,
+                durationHours: 3,
+                likes: 30,
+                hashtags: ["#centralpark", "#biketour", "#nyc"],
+                comments: [
+                    {
+                        name: "Linda Lee",
+                        profilePhotoUrl: "https://example.com/linda.jpg",
+                        comment: "So much fun! Perfect way to see the park.",
+                        date: new Date("2023-05-10")
+                    }
+                ]
+            },
+            {
+                city: '6718e936d7dcd344d93db99a',
+                cityName: "New York",
+                title: "NYC Nightlife Experience",
+                description: "Discover New York's best bars and nightclubs with a local guide.",
+                createdBy: {
+                    name: "Sarah Black",
+                    profilePhotoUrl: "https://example.com/sarah.jpg"
+                },
+                price: 120,
+                durationHours: 5,
+                likes: 80,
+                hashtags: ["#nightlife", "#nyc", "#bars"],
+                comments: [
+                    {
+                        name: "Jake Kim",
+                        profilePhotoUrl: "https://example.com/jake.jpg",
+                        comment: "Best night out in NYC!",
+                        date: new Date("2023-04-15")
+                    },
+                    {
+                        name: "Angela Brown",
+                        profilePhotoUrl: "https://example.com/angela.jpg",
+                        comment: "Fantastic experience, must-do!",
+                        date: new Date("2023-03-23")
+                    }
+                ]
+            }
+,
+            {
+                city: '6718e936d7dcd344d93db99b',
+                cityName: "Tokyo",
+                title: "Traditional Tea Ceremony",
+                description: "Experience a traditional Japanese tea ceremony in a historic tea house.",
+                createdBy: {
+                    name: "Yuki Nakamura",
+                    profilePhotoUrl: "https://example.com/yuki.jpg"
+                },
+                price: 70,
+                durationHours: 2,
+                likes: 95,
+                hashtags: ["#tea", "#tokyo", "#tradition"],
+                comments: [
+                    {
+                        name: "Chris Park",
+                        profilePhotoUrl: "https://example.com/chris.jpg",
+                        comment: "Peaceful and enlightening experience.",
+                        date: new Date("2023-02-18")
+                    }
+                ]
+            }
+,
+            {
+                city: '6718e936d7dcd344d93db99d',
+                cityName: "Sydney",
+                title: "Sydney Opera House Tour",
+                description: "Take a guided tour of the iconic Sydney Opera House.",
+                createdBy: {
+                    name: "Olivia White",
+                    profilePhotoUrl: "https://example.com/olivia.jpg"
+                },
+                price: 40,
+                durationHours: 2,
+                likes: 75,
+                hashtags: ["#opera", "#sydney", "#australia"],
+                comments: [
+                    {
+                        name: "Henry King",
+                        profilePhotoUrl: "https://example.com/henry.jpg",
+                        comment: "Impressive architecture and history.",
+                        date: new Date("2023-09-25")
+                    }
+                ]
+            },
+            {
+                city: '6718e936d7dcd344d93db99d',
+                cityName: "Sydney",
+                title: "Bondi Beach Surf Lesson",
+                description: "Learn to surf at Sydney's famous Bondi Beach with experienced instructors.",
+                createdBy: {
+                    name: "Emma Taylor",
+                    profilePhotoUrl: "https://example.com/emma.jpg"
+                },
+                price: 60,
+                durationHours: 3,
+                likes: 100,
+                hashtags: ["#surfing", "#bondi", "#australia"],
+                comments: [
+                    {
+                        name: "Lucas Reed",
+                        profilePhotoUrl: "https://example.com/lucas.jpg",
+                        comment: "Great lesson, the instructors were fantastic!",
+                        date: new Date("2023-10-04")
+                    }
+                ]
+            }
+,
+            {
+                city: '6718e936d7dcd344d93db99f',
+                cityName: "Rome",
+                title: "Ancient Rome Tour",
+                description: "Discover the Colosseum and Roman Forum with an expert guide.",
+                createdBy: {
+                    name: "Marco Rossi",
+                    profilePhotoUrl: "https://example.com/marco.jpg"
+                },
+                price: 80,
+                durationHours: 4,
+                likes: 120,
+                hashtags: ["#rome", "#history", "#colosseum"],
+                comments: [
+                    {
+                        name: "Isabella Martinez",
+                        profilePhotoUrl: "https://example.com/isabella.jpg",
+                        comment: "So much history, loved every moment!",
+                        date: new Date("2023-06-11")
+                    }
+                ]
+            }
+,
+            {
+                city: "6718e936d7dcd344d93db9a1",
+                cityName: "Bangkok",
+                title: "Street Food Tour",
+                description: "Taste Bangkok's best street foods with a knowledgeable guide.",
+                createdBy: {
+                    name: "Nina Chang",
+                    profilePhotoUrl: "https://example.com/nina.jpg"
+                },
+                price: 40,
+                durationHours: 3,
+                likes: 85,
+                hashtags: ["#food", "#bangkok", "#streetfood"],
+                comments: [
+                    {
+                        name: "Tom Hill",
+                        profilePhotoUrl: "https://example.com/tom.jpg",
+                        comment: "A delicious adventure!",
+                        date: new Date("2023-05-09")
+                    }
+                ]
+            }
+,
+            {
+                city: '6718e936d7dcd344d93db9a2',
+                cityName: "Istanbul",
+                title: "Bosphorus Cruise",
+                description: "Enjoy a scenic cruise along the Bosphorus Strait.",
+                createdBy: {
+                    name: "Leyla Koc",
+                    profilePhotoUrl: "https://example.com/leyla.jpg"
+                },
+                price: 55,
+                durationHours: 2,
+                likes: 70,
+                hashtags: ["#istanbul", "#bosphorus", "#cruise"],
+                comments: [
+                    {
+                        name: "Julia Peterson",
+                        profilePhotoUrl: "https://example.com/julia.jpg",
+                        comment: "Amazing views and a relaxing time.",
+                        date: new Date("2023-04-13")
+                    }
+                ]
+            }
+
+];
 
 
-]
+
 
 
 Itinerary.insertMany(itineraries)

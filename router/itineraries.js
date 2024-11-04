@@ -13,3 +13,5 @@ routerItineraries.get('/id/:id',itineraryById) //id
 routerItineraries.post('/create',create) 
 routerItineraries.put('/update', update)
 routerItineraries.delete('/deleteOne',deleteOne)
+
+export default routerItineraries
