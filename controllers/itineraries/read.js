@@ -1,4 +1,5 @@
 import Itinerary from "../../models/Itinerary.js";
+import "../../models/City.js"
 
 let allItineraries = async (req,res,next) => {
     try {
@@ -15,7 +16,7 @@ let allItineraries = async (req,res,next) => {
         
 
 
-        let all = await  Itinerary.find(query)
+        let all = await  Itinerary.find(query).populate("city","").exec();
 
         if (all.length > 0) {
             return res.status(200).json({
