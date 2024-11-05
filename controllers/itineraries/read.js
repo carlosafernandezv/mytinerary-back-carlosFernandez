@@ -1,5 +1,5 @@
 import Itinerary from "../../models/Itinerary.js";
-import "../../models/City.js"
+import City from "../../models/City.js"
 
 let allItineraries = async (req,res,next) => {
     try {
@@ -32,6 +32,32 @@ let allItineraries = async (req,res,next) => {
     }        
 }
 
+let ItineraryBycityName = async (req, res, next) => {
+    try {
+        console.log(req.params);
+        
+        // Obtenemos el nombre de la ciudad desde los parámetros de la URL
+        let cityNameQuery = req.params.x;
+
+        // Buscamos la ciudad por nombre
+        let city = await City.findOne({ cityName: cityNameQuery });
+        if (!city) {
+            return res.status(404).json({
+                response: "City not found"
+            });
+        }
+
+        // Buscamos los itinerarios que tengan la ciudad asociada
+        let all = await Itinerary.find({ city: city._id }).populate("city", "cityName country");
+
+        return res.status(200).json({
+            response: all
+        });
+    } catch (error) {
+        next(error);
+    }        
+};
+
 
 let itineraryById =  async (req,res,next) => {
     try {
@@ -56,4 +82,4 @@ let itineraryById =  async (req,res,next) => {
 
 
 
-export {allItineraries,itineraryById}
+export {allItineraries,itineraryById,ItineraryBycityName}
