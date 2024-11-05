@@ -217,10 +217,5 @@ let cities = [
     }
   ]
   
-  
-  
-
-
-
 
 City.insertMany(cities)

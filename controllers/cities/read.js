@@ -3,11 +3,11 @@ import City from "../../models/City.js";
 let allCity = async (req,res,next) => {
     try {
         
-        let {cityName, id} = req.query
+        let {cityName, _id} = req.query
         
         let query = {}
-        if (id){
-            query._id = id
+        if (_id){
+            query._id = _id
         }else if (cityName) {
             query.cityName = {$regex: '^'+cityName, $options:'i'}
             
@@ -37,7 +37,7 @@ let cityById =  async (req,res,next) => {
         console.log(req.params);
         
         let roleQuery = req.params.id
-        let all = await  City.find({id:roleQuery})
+        let all = await  City.findById(roleQuery)
         if (all) {
             return res.status(200).json({
                 response: all
