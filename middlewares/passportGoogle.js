@@ -23,7 +23,7 @@ export default passport.use(
                         email: profile.emails[0].value,
                         password: profile.id,
                         photo: profile.photos[0].value,
-                        city: "",
+                        city: "6718e936d7dcd344d93db999",
                         online: false
                     })
                     await user.save()
