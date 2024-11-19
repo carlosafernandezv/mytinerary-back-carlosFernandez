@@ -17,11 +17,13 @@ export default passport.use(
                 if (!user) {
                     //si no exite creo uno nuevo
                     user = new User({
-                        name: profile.displayName,
-                        lastname: profile.lastname,
+                        
+                        name: profile.name?.givenName,
+                        lastname: profile.name?.familyName,
                         email: profile.emails[0].value,
                         password: profile.id,
                         photo: profile.photos[0].value,
+                        city: "",
                         online: false
                     })
                     await user.save()
