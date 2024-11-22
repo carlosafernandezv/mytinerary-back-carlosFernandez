@@ -1,6 +1,7 @@
 import passport from "passport";
 import { Strategy as GoogleStrategy } from "passport-google-oauth20";
 import User from "../models/User.js";
+import City from "../models/City.js"
 
 export default passport.use(
     new GoogleStrategy(
@@ -15,15 +16,26 @@ export default passport.use(
                 //Buscar si el usuario esta en la Base Datos
                 let user = await User.findOne({ email: profile.emails[0].value })
                 if (!user) {
+                     const cityId = await City.findOne({ cityName: "Paris" }); // Ejemplo: Buscar por nombre
+
+                     // Si no se encuentra la ciudad, se podría asignar un valor por defecto o error
+                     if (!cityId) {
+                       return done(null, false, { message: "City not found" });
+                     }
+
                     //si no exite creo uno nuevo
                     user = new User({
-                        name: profile.displayName,
-                        lastname: profile.lastname,
+                        
+                        name: profile.name.givenName,
+                        lastname: profile.name.familyName,
                         email: profile.emails[0].value,
                         password: profile.id,
                         photo: profile.photos[0].value,
-                        online: false
+                        online: false,
+                        city: null
                     })
+                    console.log(user);
+                    
                     await user.save()
                 }
 
