@@ -12,6 +12,7 @@ const schema = joi.object({
     email: joi.string().required(),
     password: joi.string().required(),
     photo: joi.string().required(),
+    online:joi.boolean().required().default(false),
     city: joi.objectId().required()
 })
 
