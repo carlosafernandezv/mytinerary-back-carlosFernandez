@@ -15,6 +15,7 @@ routerUsers.get('/all',passport.authenticate('jwt',{session:false}), allUser)
 routerUsers.get('/id/:id',passport.authenticate('jwt',{session:false}),userById)
 routerUsers.post('/register',validator(schemaUsersCreated),accountExists,createHash,register)
 routerUsers.put('/update',passport.authenticate('jwt',{session:false}),update)
-routerUsers.delete('/deleteOne',passport.authenticate('jwt',{session:false}),deleteOne)
+routerUsers.delete('/deleteOne', passport.authenticate('jwt', { session: false }), deleteOne)
+routerUsers.get('/validateToken', )
 
 export default routerUsers

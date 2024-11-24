@@ -2,7 +2,6 @@ import { Schema, model } from "mongoose";
 
 let collection = "Cities"
 let schema = new Schema({
-    id: {type:Number,required:true},
     cityName : {type:String,required:true},
     photo : {type:String,required:true},
     country : {type:String,required:true},

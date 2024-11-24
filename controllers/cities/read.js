@@ -36,7 +36,7 @@ let cityById =  async (req,res,next) => {
     try {
         console.log(req.params);
         
-        let roleQuery = req.params.id
+        let roleQuery = req.params._id
         let all = await  City.findById(roleQuery)
         if (all) {
             return res.status(200).json({

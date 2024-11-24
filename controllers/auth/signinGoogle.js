@@ -7,17 +7,16 @@ export default async(req,res,next) => {
             {online: true}
         )
         console.log(req);
-        
-        return res.status(200).json({
-            success: true,
-            message : "signed In",
-            user:{
-                email: req.user.email,
-                photo: req.user.photo
-            },
-            token: req.token
-        })
 
+        return res.redirect(
+          "http://localhost:5173/?email:" +
+            req.user.email +
+            "token:" +
+            req.token +
+            "photo:" +
+            req.user.photo
+        );
+        
     } catch (error) {
        next(error) 
     }

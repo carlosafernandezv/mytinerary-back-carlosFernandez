@@ -13,7 +13,7 @@ const schema = joi.object({
     password: joi.string().required(),
     photo: joi.string().required(),
     online:joi.boolean().required().default(false),
-    city: joi.objectId().required()
+    city: joi.objectId()
 })
 
 export default schema
