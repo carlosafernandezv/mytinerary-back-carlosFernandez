@@ -1,5 +1,6 @@
 import { Router } from "express";
 import signIn from "../controllers/auth/signIn.js";
+import signinGoogle from "../controllers/auth/signinGoogle.js";
 import accountNoExist from "../middlewares/accountNoExist.js";
 import isValidadPassword from "../middlewares/isValidadPassword.js";
 import generateToken from "../middlewares/generateToken.js";
@@ -22,7 +23,7 @@ routerAuth.get(
     '/signin/google/callback',
     passportGoogle.authenticate('google', { session: false, failureRedirect: '/login' }),
     generateToken,
-    signIn
+    signinGoogle
 )
 
 

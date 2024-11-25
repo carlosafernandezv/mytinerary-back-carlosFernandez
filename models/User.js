@@ -8,7 +8,7 @@ let schema = new Schema({
     password: { type: String, required: true },
     photo:{ type: String, required:true},
     online:{type: Boolean, default:false},
-    city: { type: Schema.Types.ObjectId, ref: "Cities", required: true }
+    city: { type: Schema.Types.ObjectId, ref: "Cities", }
 }, {
     timestamps: true
 });
