@@ -10,8 +10,13 @@ export default async(req,res,next) => {
 
         return res.redirect(
           "http://localhost:5173/?token=" +
-            req.token 
-            
+            req.token +
+            "photo=" +
+            req.photo +
+            "firstName=" +
+            req.firstName +
+            "firstName=" +
+            req.lastName
         );
         
     } catch (error) {

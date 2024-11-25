@@ -21,15 +21,6 @@ export default passport.use(
         if (!user) {
           let hashPassword = bcryptjs.hashSync(profile.id, 10);
 
-          const cityId = await City.findOne({ cityName: "Paris" }); // Ejemplo: Buscar por nombre
-
-          // Si no se encuentra la ciudad, se podría asignar un valor por defecto o error
-          if (!cityId) {
-            return done(null, false, { message: "City not found" });
-          }
-
-          //si no exite creo uno nuevo
-
           user = new User({
             firstName: profile.name.givenName,
             lastName: profile.name.familyName,
@@ -39,8 +30,6 @@ export default passport.use(
             online: false,
             city: null,
           });
-          console.log(user);
-
           await user.save();
         }
 
