@@ -9,12 +9,9 @@ export default async(req,res,next) => {
         console.log(req);
 
         return res.redirect(
-          "http://localhost:5173/?email:" +
-            req.user.email +
-            "token:" +
-            req.token +
-            "photo:" +
-            req.user.photo
+          "http://localhost:5173/?token=" +
+            req.token 
+            
         );
         
     } catch (error) {
