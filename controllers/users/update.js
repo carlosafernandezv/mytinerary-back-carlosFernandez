@@ -4,7 +4,7 @@ const update = async (req, res, next) => {
     try {
         let user = req.body
 
-        validarAuto(user.city)
+        validarCity(user.city)
 
         let upd = await User.findOneAndUpdate(
             { name: user.name }, //condiciones de busqueda
